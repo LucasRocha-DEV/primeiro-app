@@ -20,7 +20,6 @@ function App() {
     setUser({ // Alterando o estado do usuário
       nome: nome,
       email: email,
-      senha: senha,
       idade: idade,
     })
   }
@@ -40,13 +39,6 @@ function App() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         /><br/>
-        <label className="label-bold">Senha</label><br/>
-        <input 
-          type="password"
-          placeholder="Digite sua senha"
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}
-        /><br/>
         <label className="label-bold">Idade</label><br/>
         <input 
           placeholder="Digite sua idade"
@@ -61,7 +53,6 @@ function App() {
       <div>
         <span className="label-bold">Bem Vindo:</span> {user.nome}<br/>
         <span className="label-bold">Email:</span> {user.email}<br/>
-        <span className="label-bold">Senha:</span> {user.senha}<br/>
         <span className="label-bold">Idade:</span> {user.idade}<br/>
       </div>
     </div>

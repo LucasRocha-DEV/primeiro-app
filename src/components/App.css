@@ -1,0 +1,29 @@
+.label-bold {
+  font-weight: bold;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to bottom right, purple, #e0e0e0);
+  min-height: 100vh; /* Garante que o body tenha no mínimo a altura total da tela */
+  width: 100vw; /* Garante que o body tenha a largura total da tela */
+}
+
+.button-register {
+  background-color: #4CAF50; /* Cor de fundo verde */
+  color: white; /* Cor do texto branco */
+  padding: 10px 20px; /* Espaçamento interno */
+  border: none; /* Sem borda */
+  border-radius: 5px; /* Borda levemente arredondada */
+  cursor: pointer; /* Cursor do mouse como ponteiro */
+  font-size: 16px; /* Tamanho do texto */
+}
+
+.button-register:hover {
+  background-color: #45a049; /* Cor de fundo verde mais escura */
+}

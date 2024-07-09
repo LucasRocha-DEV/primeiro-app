@@ -1,59 +1,40 @@
 import React, { useState } from 'react';
 import './components/App.css';
 function App() {
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState(''); // Adicionando um novo estado para a senha
-  const [idade, setIdade] = useState('');
-
-  const [user,setUser] = useState({
-    nome: '',
-    email: '',
-    senha: '', // Adicionando um novo estado para a senha
-    idade: ''
-  }); // Adicionando um novo estado para o usuário
-
+  const [input, setInput] = useState(''); // Estado para armazenar o valor do input
+  const [tarefas, setTarefas] = useState([]); // Corrigido para ser uma lista
+  
   function handleRegister(e) { // Função para manipular/alterar o evento de submit do formulário
     e.preventDefault(); // Previne o comportamento padrão do formulário (recarregar a página) ao submeter o formulário
-
-    alert('Usuario Registrado Com Sucesso!'); // Exibe um alerta com a mensagem de usuário registrado com sucesso
-    setUser({ // Alterando o estado do usuário
-      nome: nome,
-      email: email,
-      idade: idade,
-    })
+    setTarefas([...tarefas, input]); // Adiciona a tarefa atual à lista de tarefas
+    setInput(''); // Limpa o input após adicionar a tarefa
   }
 
   return (
     <div>
+      <div className="form-box">
+       <h1>To Do</h1>
+
       <form onSubmit={handleRegister}>
-        <label className="label-bold">Nome</label><br/>
+        <label className="label-bold">Nome da Tarefa</label><br/>
         <input 
-          placeholder="Digite seu nome" 
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}
+          placeholder="Digite uma Tarefa" 
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
         /><br/>
-        <label className="label-bold">Email</label><br/>
-        <input 
-          placeholder="Digite seu email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        /><br/>
-        <label className="label-bold">Idade</label><br/>
-        <input 
-          placeholder="Digite sua idade"
-          value={idade}
-          onChange={(e) => setIdade(e.target.value)}
-        /><br/>
+        <br/>
         <button type="submit" className="button-register">Registrar</button>
       </form>
+      </div>
 
       <br/><br/>
 
-      <div>
-        <span className="label-bold">Bem Vindo:</span> {user.nome}<br/>
-        <span className="label-bold">Email:</span> {user.email}<br/>
-        <span className="label-bold">Idade:</span> {user.idade}<br/>
+      <div className="welcome-box"> 
+        <ul>
+          {tarefas.map((tarefa, index) => (
+            <li key={index}>{tarefa}</li> // Adicionado key
+          ))}
+        </ul> {/* Corrigido para fechar a tag <ul> */}
       </div>
     </div>
   );

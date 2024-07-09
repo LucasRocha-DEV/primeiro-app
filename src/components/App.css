@@ -14,6 +14,23 @@ body {
   width: 100vw; /* Garante que o body tenha a largura total da tela */
 }
 
+.form-box {
+  background: rgba(255, 255, 255, 0.288); /* Branco com transparência */
+  backdrop-filter: blur(10px); /* Efeito de embaçamento */
+  padding: 15px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  margin-bottom: 20px; /* Margem na parte inferior */
+}
+
+.welcome-box {
+  background: rgba(255, 255, 255, 0.226); /* Branco com transparência */
+  backdrop-filter: blur(10px); /* Efeito de embaçamento */
+  padding: 15px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+
+
 .button-register {
   background-color: #4CAF50; /* Cor de fundo verde */
   color: white; /* Cor do texto branco */
